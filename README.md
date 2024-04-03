@@ -1,4 +1,4 @@
-
+Projet réalisé par Erwan Bonafous et Mahammedi Simon
 ![image](https://github.com/DanmakuGecko/Coolbox-project/assets/72706524/29dd84a9-69ae-4cb2-912a-27ea82950be6)
 
 
@@ -20,3 +20,14 @@ raspivid -t 999999 -w 640 -h 480 -fps 30 -b 1000000 -o - | cvlc -vvv stream:///d
 commande lancement flux vidéo sur le port 40000 : a lancer sur l'invité de commande de linux
 
 Le programme utilisé pour la capture vidéo est contenu dans le programme python 'picamera.py'
+
+
+![image](https://github.com/DanmakuGecko/Coolbox-project/assets/72706524/91384130-90cb-4475-8432-1294ed07d8eb)
+
+Les images utilisées ne proviennent pas de notre chambre à brouillard. 
+
+
+
+![image](https://github.com/DanmakuGecko/Coolbox-project/assets/72706524/25e6c595-e89a-40a9-baf9-526e13c4c249)
+![image](https://github.com/DanmakuGecko/Coolbox-project/assets/72706524/ab04a3ae-6a80-40e1-a45f-32a3cac1db02)
+
