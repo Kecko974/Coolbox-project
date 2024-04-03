@@ -1,0 +1,31 @@
+#Necessite OpenCV
+
+import cv2
+
+cap = cv2.VideoCapture('vid3.mp4')
+
+i = 0
+while True:
+    ret, frame = cap.read() #Fonction pour lire la vidéo frame par frame
+    if not ret: #Arrete la vidéo si il n'y a plus de frame à lire, sinon ca plante
+        break
+    
+    gris = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) #Comme avant, on passe chaque frame en niveau de gris
+    gris_f = cv2.blur(gris,(20,20)) #On applique du flou
+    seuil, gris_bin = cv2.threshold(gris_f, 50, 255, cv2.THRESH_BINARY_INV)
+    
+    #cv2.imshow('Ma vidéo en binaire', gris_bin)
+    contours, h = cv2.findContours(gris_bin, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+    cv2.drawContours(frame, contours,-1,(0,0,255),2)
+    i  = i + len(contours)/120 #Je divise par la durée de vie en frame, soit 2s = 120f
+    u = round(i)
+    cv2.putText(frame, "Nombre de traces: ",(10,50), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,255,255),2)
+    cv2.putText(frame,  str(u),(320,50), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,255,255),2)
+    cv2.imshow('Contours', frame)
+    
+
+    if cv2.waitKey(25) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
