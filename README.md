@@ -24,7 +24,7 @@ Le programme utilisé pour la capture vidéo est contenu dans le programme pytho
 
 ![image](https://github.com/DanmakuGecko/Coolbox-project/assets/72706524/91384130-90cb-4475-8432-1294ed07d8eb)
 
-Les images utilisées ne proviennent pas de notre chambre à brouillard. 
+
 
 
 
